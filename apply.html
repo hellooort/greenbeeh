@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>임대보증금 제로 - 소상공인종합지원안내센터</title>
+    <title>정부폐업지원신청 / 철거 견적 요청 - 소상공인종합지원안내센터</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="closure.html" class="nav-link">폐업및철거</a></li>
-                    <li><a href="deposit.html" class="nav-link active">임대보증금 제로</a></li>
+                    <li><a href="deposit.html" class="nav-link">임대보증금 제로</a></li>
                     <li><a href="funding.html" class="nav-link">자금컨설팅</a></li>
                     <li><a href="consultant.html" class="nav-link">전문컨설턴트</a></li>
                 </ul>
@@ -41,116 +41,77 @@
             <li><a href="about.html">About</a></li>
             <li><a href="closure.html">폐업및철거</a></li>
             <li><a href="deposit.html">임대보증금 제로</a></li>
-            <li><a href="#">자금컨설팅</a></li>
-            <li><a href="#">전문컨설턴트</a></li>
+            <li><a href="funding.html">자금컨설팅</a></li>
+            <li><a href="consultant.html">전문컨설턴트</a></li>
         </ul>
     </div>
 
     <!-- Page Hero -->
-    <section class="page-hero page-hero-green">
+    <section class="page-hero page-hero-blue">
         <div class="page-hero-content">
-            <h1>임대보증금이 제로?</h1>
-            <p>보증금 부담 없이 사업을 시작하세요</p>
+            <h1>정부폐업지원신청 / 철거 견적 요청</h1>
+            <p>아래 양식을 작성해 주시면 담당자가 연락드립니다</p>
         </div>
     </section>
 
-    <!-- Deposit Info Section -->
-    <section class="deposit-section">
+    <!-- Apply Form Section -->
+    <section class="apply-section">
         <div class="container">
-            <div class="deposit-grid">
-                <!-- Card 1 -->
-                <div class="deposit-card">
-                    <div class="deposit-card-icon">
-                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2"/>
-                            <text x="32" y="38" font-size="18" font-weight="bold" fill="currentColor" text-anchor="middle">₩</text>
-                        </svg>
+            <div class="apply-form-container">
+                <form class="apply-form" id="applyForm">
+                    <div class="form-group">
+                        <label for="companyName">기업명 <span class="required">*</span></label>
+                        <input type="text" id="companyName" name="companyName" required placeholder="기업명을 입력해주세요">
                     </div>
-                    <div class="deposit-card-number">01</div>
-                    <h3>월세 보증금 존재 이유</h3>
-                    <p>
-                        임대차 계약 기간 동안 임차인의 <strong>월세 및 관리비 체납</strong>, 
-                        임차공간의 <strong>원상회복</strong>을 대비하여 
-                        임대인이 미리 받아 두는 <strong>보험성격의 돈</strong>입니다.
-                    </p>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="deposit-card">
-                    <div class="deposit-card-icon">
-                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M32 8L38 24H54L42 34L46 50L32 40L18 50L22 34L10 24H26L32 8Z" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <path d="M26 32L30 36L38 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div class="form-group">
+                        <label for="address">사업장 주소 <span class="required">*</span></label>
+                        <input type="text" id="address" name="address" required placeholder="사업장 주소를 입력해주세요">
                     </div>
-                    <div class="deposit-card-number">02</div>
-                    <h3>임대인 불안요소 제거</h3>
-                    <p>
-                        임차인의 월세지급을 책임져 임대차 계약기간 동안 
-                        임대인이 <strong>월세를 100% 받을 수 있기</strong> 때문에 
-                        보증금이 없어도 임대차 계약에 대한 <strong>불안이 들지 않게끔</strong> 만들어드립니다.
-                    </p>
-                </div>
 
-                <!-- Card 3 -->
-                <div class="deposit-card">
-                    <div class="deposit-card-icon">
-                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="12" y="20" width="40" height="30" rx="2" stroke="currentColor" stroke-width="2"/>
-                            <path d="M12 28H52" stroke="currentColor" stroke-width="2"/>
-                            <path d="M32 14V20" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="32" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
-                            <text x="32" y="42" font-size="12" font-weight="bold" fill="currentColor" text-anchor="middle">0</text>
-                        </svg>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">성함 <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="성함을 입력해주세요">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">연락처 <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="010-0000-0000">
+                        </div>
                     </div>
-                    <div class="deposit-card-number">03</div>
-                    <h3>무보증금 제공</h3>
-                    <p>
-                        매물을 제공할 수 있게 되고 
-                        임대인은 <strong>공실을 줄일 수 있습니다</strong>.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Process Section -->
-    <section class="deposit-process">
-        <div class="container">
-            <h2 class="section-title">임대보증금 제로 프로세스</h2>
-            <div class="process-flow">
-                <div class="process-step">
-                    <div class="process-icon">📞</div>
-                    <span>상담 신청</span>
-                </div>
-                <div class="process-arrow">→</div>
-                <div class="process-step">
-                    <div class="process-icon">📋</div>
-                    <span>자격 검토</span>
-                </div>
-                <div class="process-arrow">→</div>
-                <div class="process-step">
-                    <div class="process-icon">🤝</div>
-                    <span>계약 체결</span>
-                </div>
-                <div class="process-arrow">→</div>
-                <div class="process-step">
-                    <div class="process-icon">🏠</div>
-                    <span>입주 완료</span>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="industry">업종 <span class="required">*</span></label>
+                            <input type="text" id="industry" name="industry" required placeholder="업종을 입력해주세요">
+                        </div>
+                        <div class="form-group">
+                            <label for="revenue">전년도 매출액</label>
+                            <input type="text" id="revenue" name="revenue" placeholder="전년도 매출액을 입력해주세요">
+                        </div>
+                    </div>
 
-    <!-- CTA Section -->
-    <section class="deposit-cta">
-        <div class="container">
-            <div class="cta-box cta-box-green">
-                <h2>임대보증금 없이 사업을 시작하고 싶으신가요?<br>지금 바로 상담을 신청해 주세요.</h2>
-                <a href="tel:1877-1789" class="btn btn-primary btn-lg">
-                    <span class="btn-icon">📞</span>
-                    1877-1789 상담하기
-                </a>
+                    <div class="form-group">
+                        <label for="message">상담 요청 시 전달내용</label>
+                        <textarea id="message" name="message" rows="5" placeholder="상담 시 전달하고 싶은 내용을 입력해주세요"></textarea>
+                    </div>
+
+                    <div class="form-group form-checkbox">
+                        <div class="privacy-notice">
+                            <h4>개인정보 수집 및 활용 동의</h4>
+                            <p>"정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.</p>
+                        </div>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <span class="checkmark"></span>
+                            <span>개인 정보 수집 및 활용에 동의 합니다</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        제 출
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -198,5 +159,22 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Form submission handling
+        document.getElementById('applyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you can send the data to your server or email service
+            // For now, show a success message
+            alert('신청이 완료되었습니다. 담당자가 곧 연락드리겠습니다.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
 </body>
 </html>
