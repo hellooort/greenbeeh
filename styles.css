@@ -1007,7 +1007,7 @@ ul {
 
 /* ===== Funding Page ===== */
 .hero-subtitle-gold {
-    color: #DB9421 !important;
+    color: #ffffff !important;
     font-weight: 600;
 }
 
@@ -1239,13 +1239,38 @@ ul {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin-bottom: 50px;
+}
+
+.workflow-phase {
+    margin-bottom: 50px;
+}
+
+.workflow-phase:last-child {
+    margin-bottom: 0;
+}
+
+.phase-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cta-orange);
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 4px solid var(--cta-orange);
 }
 
 .workflow-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 16px;
-    margin-top: 40px;
+}
+
+.workflow-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.workflow-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .workflow-card {
@@ -1639,7 +1664,9 @@ ul {
         padding: 12px 16px;
     }
     
-    .workflow-grid {
+    .workflow-grid,
+    .workflow-grid-3,
+    .workflow-grid-2 {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
@@ -1676,7 +1703,9 @@ ul {
         grid-template-columns: 1fr;
     }
     
-    .workflow-grid {
+    .workflow-grid,
+    .workflow-grid-3,
+    .workflow-grid-2 {
         grid-template-columns: 1fr;
     }
 }
