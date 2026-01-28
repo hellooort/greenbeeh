@@ -624,6 +624,10 @@ ul {
     background: linear-gradient(135deg, var(--cta-orange) 0%, #b86d2d 100%);
 }
 
+.page-hero-purple {
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+}
+
 .page-hero-content h1 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
