@@ -21,8 +21,8 @@
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="closure.html" class="nav-link">폐업및철거</a></li>
-                    <li><a href="deposit.html" class="nav-link">임대보증금 제로</a></li>
                     <li><a href="funding.html" class="nav-link">자금컨설팅</a></li>
+                    <li><a href="deposit.html" class="nav-link">임대보증금 제로</a></li>
                     <li><a href="consultant.html" class="nav-link">전문컨설턴트</a></li>
                 </ul>
             </nav>
@@ -40,8 +40,8 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="closure.html">폐업및철거</a></li>
-            <li><a href="deposit.html">임대보증금 제로</a></li>
             <li><a href="funding.html">자금컨설팅</a></li>
+            <li><a href="deposit.html">임대보증금 제로</a></li>
             <li><a href="consultant.html">전문컨설턴트</a></li>
         </ul>
     </div>
@@ -86,8 +86,8 @@
                             <input type="text" id="industry" name="industry" required placeholder="업종을 입력해주세요">
                         </div>
                         <div class="form-group">
-                            <label for="revenue">전년도 매출액</label>
-                            <input type="text" id="revenue" name="revenue" placeholder="전년도 매출액을 입력해주세요">
+                            <label for="fundingAmount">필요금액</label>
+                            <input type="text" id="fundingAmount" name="fundingAmount" placeholder="선택하세요" readonly onclick="openFundingModal()">
                         </div>
                     </div>
 
@@ -159,8 +159,51 @@
         </div>
     </footer>
 
+    <!-- Funding Amount Modal -->
+    <div class="modal-overlay" id="fundingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>필요금액 선택</h3>
+                <button type="button" class="modal-close" onclick="closeFundingModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="funding-options">
+                    <button type="button" class="funding-option" onclick="selectFundingAmount('1,000만원 이하')">1,000만원 이하</button>
+                    <button type="button" class="funding-option" onclick="selectFundingAmount('5,000만원 이하')">5,000만원 이하</button>
+                    <button type="button" class="funding-option" onclick="selectFundingAmount('1억원 이하')">1억원 이하</button>
+                    <button type="button" class="funding-option" onclick="selectFundingAmount('5억원 이하')">5억원 이하</button>
+                    <button type="button" class="funding-option" onclick="selectFundingAmount('10억원 이하')">10억원 이하</button>
+                    <button type="button" class="funding-option" onclick="selectFundingAmount('10억원 초과')">10억원 초과</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
     <script>
+        // Funding Amount Modal Functions
+        function openFundingModal() {
+            document.getElementById('fundingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFundingModal() {
+            document.getElementById('fundingModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function selectFundingAmount(amount) {
+            document.getElementById('fundingAmount').value = amount;
+            closeFundingModal();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('fundingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeFundingModal();
+            }
+        });
+
         // Form submission handling
         document.getElementById('applyForm').addEventListener('submit', function(e) {
             e.preventDefault();

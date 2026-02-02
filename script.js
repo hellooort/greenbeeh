@@ -1,3 +1,32 @@
+// Hero Subtitle Rotation
+const heroSubtitles = [
+    '나에게 알맞는 창업 운영자금 어디에서 알아보나요?',
+    '임대보증금 없이 창업 할 수 있을까요?',
+    '여러분의 창업과 폐업을 지원합니다.',
+    '폐업해야 하는데 철거는 어디에 맡겨야 되나요?'
+];
+
+let currentSubtitleIndex = 0;
+const heroSubtitleElement = document.getElementById('hero-subtitle');
+
+if (heroSubtitleElement) {
+    setInterval(() => {
+        // 페이드 아웃
+        heroSubtitleElement.style.opacity = '0';
+        heroSubtitleElement.style.transform = 'translateY(10px)';
+        
+        setTimeout(() => {
+            // 다음 텍스트로 변경
+            currentSubtitleIndex = (currentSubtitleIndex + 1) % heroSubtitles.length;
+            heroSubtitleElement.textContent = heroSubtitles[currentSubtitleIndex];
+            
+            // 페이드 인
+            heroSubtitleElement.style.opacity = '1';
+            heroSubtitleElement.style.transform = 'translateY(0)';
+        }, 300);
+    }, 3000);
+}
+
 // Mobile Menu Toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const mobileNav = document.querySelector('.mobile-nav');
