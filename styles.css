@@ -491,6 +491,17 @@ ul {
     object-fit: contain;
 }
 
+/* ===== Mobile Line Break ===== */
+.mobile-br {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-br {
+        display: block;
+    }
+}
+
 /* ===== About Section ===== */
 .about {
     padding: 100px 0;
