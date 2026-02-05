@@ -1636,10 +1636,15 @@ ul {
     
     .about-content-box {
         padding: 30px 20px;
+        width: 100%;
     }
     
     .about-content-box h2 {
         font-size: 1.3rem;
+    }
+    
+    .about-section {
+        width: 100%;
     }
     
     /* Closure Page */
@@ -1648,8 +1653,14 @@ ul {
         gap: 20px;
     }
     
+    .intro-box {
+        width: 100%;
+        max-width: 100%;
+    }
+    
     .intro-box p {
         font-size: 1rem;
+        width: 100%;
     }
     
     .intro-box br {
@@ -1658,16 +1669,53 @@ ul {
     
     .cta-box {
         padding: 40px 20px;
+        width: 100%;
     }
     
     .cta-box h2 {
         font-size: 1.3rem;
     }
     
+    .quote-box {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .quote-box p {
+        width: 100%;
+    }
+    
     /* Deposit Page */
+    .deposit-card {
+        width: 100%;
+    }
+    
     .deposit-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+    
+    /* Funding Page */
+    .intro-text-box {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .intro-text-box p {
+        width: 100%;
+    }
+    
+    .funding-section-box {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .funding-list li {
+        width: 100%;
+    }
+    
+    .example-list li {
+        width: 100%;
     }
     
     .process-flow {
