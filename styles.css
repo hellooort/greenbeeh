@@ -1663,7 +1663,7 @@ ul {
         width: 100%;
     }
     
-    .intro-box br {
+    .intro-box br:not(.mobile-br) {
         display: none;
     }
     
