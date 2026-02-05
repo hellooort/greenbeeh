@@ -1,15 +1,20 @@
 // Hero Subtitle Rotation
 const heroSubtitles = [
-    '나에게 알맞는 창업 운영자금 어디에서 알아보나요?',
-    '임대보증금 없이 창업 할 수 있을까요?',
-    '여러분의 창업과 폐업을 지원합니다.',
-    '폐업해야 하는데 철거는 어디에 맡겨야 되나요?'
+    '나에게 알맞는 창업 운영자금<br>어디에서 알아보나요?',
+    '임대보증금 없이<br>창업 할 수 있을까요?',
+    '여러분의 창업과 폐업을<br>지원합니다.',
+    '폐업해야 하는데<br>철거는 어디에 맡겨야 되나요?'
 ];
 
 let currentSubtitleIndex = 0;
 const heroSubtitleElement = document.getElementById('hero-subtitle');
 
 if (heroSubtitleElement) {
+    // 초기 텍스트도 모바일용으로 설정
+    if (window.innerWidth <= 768) {
+        heroSubtitleElement.innerHTML = heroSubtitles[0];
+    }
+    
     setInterval(() => {
         // 페이드 아웃
         heroSubtitleElement.style.opacity = '0';
@@ -18,7 +23,7 @@ if (heroSubtitleElement) {
         setTimeout(() => {
             // 다음 텍스트로 변경
             currentSubtitleIndex = (currentSubtitleIndex + 1) % heroSubtitles.length;
-            heroSubtitleElement.textContent = heroSubtitles[currentSubtitleIndex];
+            heroSubtitleElement.innerHTML = heroSubtitles[currentSubtitleIndex];
             
             // 페이드 인
             heroSubtitleElement.style.opacity = '1';
