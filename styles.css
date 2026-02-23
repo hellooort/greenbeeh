@@ -1742,6 +1742,15 @@ ul {
         grid-template-columns: 1fr;
         gap: 16px;
     }
+
+    .deposit-card h3 {
+        font-size: 1rem;
+    }
+
+    .deposit-card p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
     
     /* Funding Page */
     .intro-text-box {
