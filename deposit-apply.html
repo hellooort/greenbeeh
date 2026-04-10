@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>임대보증금 제로 신청 - 소상공인종합지원안내센터</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="images/main logo.avif" alt="소상공인종합지원안내센터" class="logo-img">
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="closure.html" class="nav-link">폐업및철거</a></li>
+                    <li><a href="funding.html" class="nav-link">자금컨설팅</a></li>
+                    <li class="has-submenu">
+                        <a href="deposit.html" class="nav-link active">임대보증금 제로</a>
+                        <ul class="submenu">
+                            <li><a href="deposit-tenant.html">임차인 알아보기</a></li>
+                            <li><a href="deposit-landlord.html">임대인 알아보기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="consultant.html" class="nav-link">전문컨설턴트</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="closure.html">폐업및철거</a></li>
+            <li><a href="funding.html">자금컨설팅</a></li>
+            <li class="has-submenu-mobile">
+                <a href="deposit.html">임대보증금 제로</a>
+                <ul class="submenu-mobile">
+                    <li><a href="deposit-tenant.html">임차인 알아보기</a></li>
+                    <li><a href="deposit-landlord.html">임대인 알아보기</a></li>
+                </ul>
+            </li>
+            <li><a href="consultant.html">전문컨설턴트</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero page-hero-green">
+        <div class="page-hero-content">
+            <h1 id="pageTitle">임차인(창업) 신청서</h1>
+            <p id="pageSubtitle">비즈니스의 새로운 도약을 위한 첫 걸음입니다.</p>
+        </div>
+    </section>
+
+    <!-- Apply Form Section -->
+    <section class="apply-section">
+        <div class="container">
+            <div class="apply-form-container">
+                <!-- Tab Navigation -->
+                <div class="form-tabs">
+                    <button type="button" class="form-tab active" data-tab="tenant">임차인 (상가 구하기)</button>
+                    <button type="button" class="form-tab" data-tab="landlord">임대인 (매물 내놓기)</button>
+                </div>
+
+                <!-- Tenant Form -->
+                <form class="apply-form" id="tenantForm">
+                    <div class="form-section">
+                        <h3 class="form-section-title">1. 기본 정보</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tenantName">이름 <span class="required">*</span></label>
+                                <input type="text" id="tenantName" name="name" required placeholder="이름을 입력해주세요">
+                            </div>
+                            <div class="form-group">
+                                <label for="tenantPhone">연락처 <span class="required">*</span></label>
+                                <input type="tel" id="tenantPhone" name="phone" required placeholder="010-0000-0000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">2. 사업 정보</h3>
+                        <div class="form-group">
+                            <label>업종 <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-label"><input type="radio" name="businessType" value="카페" required> 카페</label>
+                                <label class="radio-label"><input type="radio" name="businessType" value="음식점"> 음식점</label>
+                                <label class="radio-label"><input type="radio" name="businessType" value="미용실"> 미용실</label>
+                                <label class="radio-label"><input type="radio" name="businessType" value="학원"> 학원</label>
+                                <label class="radio-label"><input type="radio" name="businessType" value="소매"> 소매</label>
+                                <label class="radio-label"><input type="radio" name="businessType" value="기타"> 기타</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="investmentAmount">투자자금 (백만원)</label>
+                            <input type="number" id="investmentAmount" name="investmentAmount" placeholder="예: 50">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">3. 임대 조건</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="desiredArea">면적 (평)</label>
+                                <input type="number" id="desiredArea" name="desiredArea" placeholder="예: 20">
+                            </div>
+                            <div class="form-group">
+                                <label for="monthlyRent">가능한 월세 범위 (만원)</label>
+                                <select id="monthlyRent" name="monthlyRent">
+                                    <option value="">선택하세요</option>
+                                    <option value="100">100만원 이하</option>
+                                    <option value="150">150만원 이하</option>
+                                    <option value="200">200만원 이하</option>
+                                    <option value="300">300만원 이하</option>
+                                    <option value="300+">300만원 초과</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="desiredRegion">희망 지역</label>
+                                <input type="text" id="desiredRegion" name="desiredRegion" placeholder="예: 서울 강남구">
+                            </div>
+                            <div class="form-group">
+                                <label>입점 희망 시기</label>
+                                <div class="radio-group">
+                                    <label class="radio-label"><input type="radio" name="moveInTime" value="1개월"> 1개월</label>
+                                    <label class="radio-label"><input type="radio" name="moveInTime" value="2개월"> 2개월</label>
+                                    <label class="radio-label"><input type="radio" name="moveInTime" value="3개월"> 3개월</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">4. 인테리어 가능 비용</h3>
+                        <div class="form-group">
+                            <label for="interiorBudget">인테리어 가능 비용 (만원)</label>
+                            <input type="number" id="interiorBudget" name="interiorBudget" placeholder="예: 3000">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-checkbox">
+                        <div class="privacy-notice">
+                            <h4>개인정보 수집 및 활용 동의</h4>
+                            <p>"정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.</p>
+                        </div>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="tenantPrivacy" name="privacy" required>
+                            <span class="checkmark"></span>
+                            <span>개인 정보 수집 및 활용에 동의 합니다</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">제출 및 심사 대기</button>
+                    <p class="form-notice">입력하신 정보는 심사 목적으로만 사용되며, 철저히 암호화되어 보관됩니다.</p>
+                </form>
+
+                <!-- Landlord Form -->
+                <form class="apply-form" id="landlordForm" style="display: none;">
+                    <div class="form-section">
+                        <h3 class="form-section-title">1. 임대인 기본 정보</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="landlordName">성명/상호 <span class="required">*</span></label>
+                                <input type="text" id="landlordName" name="name" required placeholder="성명 또는 상호를 입력해주세요">
+                            </div>
+                            <div class="form-group">
+                                <label for="landlordPhone">연락처 <span class="required">*</span></label>
+                                <input type="tel" id="landlordPhone" name="phone" required placeholder="010-0000-0000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="landlordEmail">이메일</label>
+                            <input type="email" id="landlordEmail" name="email" placeholder="이메일 주소를 입력해주세요">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">2. 임대 점포 정보</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="buildingName">건물명 <span class="required">*</span></label>
+                                <input type="text" id="buildingName" name="buildingName" required placeholder="건물명을 입력해주세요">
+                            </div>
+                            <div class="form-group">
+                                <label for="floorNumber">층수 <span class="required">*</span></label>
+                                <input type="text" id="floorNumber" name="floorNumber" required placeholder="예: 1층">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="buildingAddress">건물 주소 <span class="required">*</span></label>
+                            <input type="text" id="buildingAddress" name="buildingAddress" required placeholder="건물 주소를 입력해주세요">
+                        </div>
+                        <div class="form-group">
+                            <label for="storeArea">점포 면적 (평)</label>
+                            <input type="number" id="storeArea" name="storeArea" placeholder="전용면적 기준">
+                        </div>
+                        <div class="form-group">
+                            <label>현재 상태 <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-label"><input type="radio" name="currentStatus" value="공실" required> 공실</label>
+                                <label class="radio-label"><input type="radio" name="currentStatus" value="임대중"> 임대 중</label>
+                            </div>
+                        </div>
+                        <div class="form-group" id="contractEndDateGroup" style="display: none;">
+                            <label for="contractEndDate">계약 종료 예정일</label>
+                            <input type="date" id="contractEndDate" name="contractEndDate">
+                        </div>
+                        <div class="form-group">
+                            <label>업종 제한 여부</label>
+                            <div class="radio-group">
+                                <label class="radio-label"><input type="radio" name="businessRestriction" value="없음"> 없음</label>
+                                <label class="radio-label"><input type="radio" name="businessRestriction" value="있음"> 있음</label>
+                            </div>
+                        </div>
+                        <div class="form-group" id="restrictionDetailGroup" style="display: none;">
+                            <label for="restrictionDetail">제한 업종 내용</label>
+                            <input type="text" id="restrictionDetail" name="restrictionDetail" placeholder="제한 업종을 입력해주세요">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">3. 임대 조건 (단위: 만원)</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="prevDeposit">이전 보증금</label>
+                                <input type="number" id="prevDeposit" name="prevDeposit" placeholder="이전 보증금">
+                            </div>
+                            <div class="form-group">
+                                <label for="prevRent">이전 임대료</label>
+                                <input type="number" id="prevRent" name="prevRent" placeholder="이전 임대료">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="currentDeposit">현재 보증금</label>
+                                <input type="text" id="currentDeposit" name="currentDeposit" value="0" disabled class="disabled-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="desiredRent">희망 임대료 <span class="required">*</span></label>
+                                <input type="number" id="desiredRent" name="desiredRent" required placeholder="희망 임대료">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="maintenanceFee">관리비</label>
+                                <input type="number" id="maintenanceFee" name="maintenanceFee" placeholder="관리비">
+                            </div>
+                            <div class="form-group">
+                                <label for="availableDate">임대가능 시기</label>
+                                <input type="date" id="availableDate" name="availableDate">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="minLeasePeriod">최소 임대 기간</label>
+                                <input type="text" id="minLeasePeriod" name="minLeasePeriod" placeholder="예: 2년">
+                            </div>
+                            <div class="form-group">
+                                <label for="depositInsurance">보증금</label>
+                                <input type="text" id="depositInsurance" name="depositInsurance" value="보증보험증권(5개월 분)" disabled class="disabled-input">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="etcInfo">기타</label>
+                            <input type="text" id="etcInfo" name="etcInfo" value="원상복구비 보증보험 포함, 철거관리는 소상공지원사업단 실행." disabled class="disabled-input">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">4. 임대인 참여 확인</h3>
+                        <div class="form-group form-checkbox">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="landlordParticipation" name="participation" required>
+                                <span class="checkmark"></span>
+                                <span>본인은 소상공인 임대보증금 제로 사업의 취지를 이해하고 참여 의사가 있으며, 사업 운영기관의 안내 및 절차에 협조할 것을 확인합니다.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-checkbox">
+                        <div class="privacy-notice">
+                            <h4>개인정보 수집 이용 · 동의</h4>
+                            <p>본 사업 운영을 위해 신청자의 개인정보를 수집 · 이용하는 것에 동의합니다.</p>
+                        </div>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="landlordPrivacy" name="privacy" required>
+                            <span class="checkmark"></span>
+                            <span>개인 정보 수집 및 활용에 동의 합니다</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">제출 및 심사 대기</button>
+                    <p class="form-notice">입력하신 정보는 심사 목적으로만 사용되며, 철저히 암호화되어 보관됩니다.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="블로그">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="인스타그램">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="페이스북">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="유튜브">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                    </div>
+                    <div class="footer-phone">
+                        <span class="phone-label">상담문의는</span>
+                        <a href="tel:1877-1789" class="phone-number">1877-1789</a>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-info">
+                        <h3>주식회사 소상공인종합지원안내센터</h3>
+                        <address>
+                            대표자 박기봉<br>
+                            서울특별시 금천구 가산디지털2로 169-23, 공장동 701-7호(가산동,모비우스타워)<br>
+                            사업자번호 552-81-04369<br>
+                            E-mail : ansook2974@gmail.com<br>
+                            <strong>대표번호 1877-1789</strong>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 소상공인종합지원안내센터. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Tab switching
+        const tabs = document.querySelectorAll('.form-tab');
+        const tenantForm = document.getElementById('tenantForm');
+        const landlordForm = document.getElementById('landlordForm');
+        const pageTitle = document.getElementById('pageTitle');
+        const pageSubtitle = document.getElementById('pageSubtitle');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                if (this.dataset.tab === 'tenant') {
+                    tenantForm.style.display = 'block';
+                    landlordForm.style.display = 'none';
+                    pageTitle.textContent = '임차인(창업) 신청서';
+                    pageSubtitle.textContent = '비즈니스의 새로운 도약을 위한 첫 걸음입니다.';
+                } else {
+                    tenantForm.style.display = 'none';
+                    landlordForm.style.display = 'block';
+                    pageTitle.textContent = '임대보증금 제로 사업 신청서(임대인용)';
+                    pageSubtitle.textContent = '중,소상공인의 초기 창업 부담을 완화하고 지역 상권 활성화를 위해 추진되는 중,소상공인 임대보증금 제로 사업에 참여하고자 아래와 같이 신청합니다.';
+                }
+            });
+        });
+
+        // Check URL params for initial tab
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('type') === 'landlord') {
+            document.querySelector('[data-tab="landlord"]').click();
+        }
+
+        // Show/hide contract end date based on current status
+        document.querySelectorAll('input[name="currentStatus"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.getElementById('contractEndDateGroup').style.display = 
+                    this.value === '임대중' ? 'block' : 'none';
+            });
+        });
+
+        // Show/hide restriction detail based on business restriction
+        document.querySelectorAll('input[name="businessRestriction"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.getElementById('restrictionDetailGroup').style.display = 
+                    this.value === '있음' ? 'block' : 'none';
+            });
+        });
+
+        // Form submissions
+        tenantForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('신청이 완료되었습니다. 담당자가 곧 연락드리겠습니다.');
+            this.reset();
+        });
+
+        landlordForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('신청이 완료되었습니다. 담당자가 곧 연락드리겠습니다.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
