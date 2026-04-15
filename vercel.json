@@ -8,8 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/deposit-app/assets/(.*)",
-      "dest": "/deposit-app/assets/$1"
+      "src": "/deposit-app/(.+\\.(js|css|png|jpg|jpeg|gif|svg|ico|webp|avif|woff|woff2|ttf|eot))",
+      "dest": "/deposit-app/$1"
     },
     {
       "src": "/deposit-app/(.*)",
