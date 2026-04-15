@@ -8,6 +8,14 @@
   ],
   "routes": [
     {
+      "src": "/deposit-app/assets/(.*)",
+      "dest": "/deposit-app/assets/$1"
+    },
+    {
+      "src": "/deposit-app/(.*)",
+      "dest": "/deposit-app/index.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/$1"
     }
