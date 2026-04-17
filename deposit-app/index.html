@@ -9,6 +9,74 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAcY0gkVSUJbMa9m0uBRqMeHOIc6fWGCTtes5qmE23Hj4hULDx0uWrjCJdnOCsc67s/exec';
+
+      document.addEventListener('submit', function(e) {
+        var form = e.target;
+        if (!form || form.tagName !== 'FORM') return;
+
+        e.preventDefault();
+
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn ? btn.textContent : '';
+        if (btn) { btn.textContent = '전송 중...'; btn.disabled = true; }
+
+        var labels = form.querySelectorAll('label');
+        var data = { '신청유형': '임대보증금제로' };
+        var radioValues = {};
+
+        var radios = form.querySelectorAll('input[type="radio"]:checked');
+        for (var r = 0; r < radios.length; r++) {
+          var radioName = radios[r].name || ('라디오' + r);
+          radioValues[radioName] = radios[r].value;
+        }
+
+        var sectionName = '';
+        for (var i = 0; i < labels.length; i++) {
+          var label = labels[i];
+          var text = label.textContent.trim();
+
+          var input = label.querySelector('input[type="text"], input[type="number"], input[type="tel"], input[type="email"], input[type="date"], textarea');
+          if (!input) {
+            var parent = label.closest('div');
+            if (parent) input = parent.querySelector('input[type="text"], input[type="number"], input[type="tel"], input[type="email"], input[type="date"], textarea');
+          }
+
+          if (input && input.value && text) {
+            var key = text.replace(/\s+/g, ' ').substring(0, 30);
+            data[key] = input.value;
+          }
+        }
+
+        for (var name in radioValues) {
+          if (name === 'status') data['현재상태'] = radioValues[name];
+          else if (name === 'restriction') data['업종제한여부'] = radioValues[name];
+          else if (name === 'condition_status') data['임대조건상태'] = radioValues[name];
+          else data[name] = radioValues[name];
+        }
+
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify(data)
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(result) {
+          if (result.result === 'success') {
+            alert('신청이 완료되었습니다. 담당자가 곧 연락드리겠습니다.');
+            form.reset();
+          } else {
+            alert('전송 중 오류가 발생했습니다. 전화(1877-1789)로 문의해주세요.');
+          }
+        })
+        .catch(function() {
+          alert('전송 중 오류가 발생했습니다. 전화(1877-1789)로 문의해주세요.');
+        })
+        .finally(function() {
+          if (btn) { btn.textContent = originalText; btn.disabled = false; }
+        });
+      }, true);
+    </script>
   </body>
 </html>
 

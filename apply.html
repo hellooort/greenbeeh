@@ -161,20 +161,48 @@
 
     <script src="script.js"></script>
     <script>
-        // Form submission handling
-        document.getElementById('applyForm').addEventListener('submit', function(e) {
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAcY0gkVSUJbMa9m0uBRqMeHOIc6fWGCTtes5qmE23Hj4hULDx0uWrjCJdnOCsc67s/exec';
+
+        document.getElementById('applyForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Collect form data
+            const submitBtn = this.querySelector('.btn-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '전송 중...';
+            submitBtn.disabled = true;
+            
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
+            const raw = Object.fromEntries(formData);
+            const data = {
+                '신청유형': '폐업지원',
+                '기업명': raw.companyName || '',
+                '사업장주소': raw.address || '',
+                '성함': raw.name || '',
+                '연락처': raw.phone || '',
+                '업종': raw.industry || '',
+                '사업장면적': raw.area || '',
+                '전달내용': raw.message || ''
+            };
             
-            // Here you can send the data to your server or email service
-            // For now, show a success message
-            alert('신청이 완료되었습니다. 담당자가 곧 연락드리겠습니다.');
-            
-            // Reset form
-            this.reset();
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                
+                if (result.result === 'success') {
+                    alert('신청이 완료되었습니다. 담당자가 곧 연락드리겠습니다.');
+                    this.reset();
+                } else {
+                    alert('전송 중 오류가 발생했습니다. 전화(1877-1789)로 문의해주세요.');
+                }
+            } catch (error) {
+                alert('전송 중 오류가 발생했습니다. 전화(1877-1789)로 문의해주세요.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         });
     </script>
 </body>
